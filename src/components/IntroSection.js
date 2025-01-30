@@ -60,9 +60,17 @@ const IntroSection = () => {
           this.currentPosX += (this.destPosX - this.currentPosX) * 0.1;
           this.currentPosY += (this.destPosY - this.currentPosY) * 0.1;
 
-          let d = p.dist(p.mouseX, p.mouseY, this.currentPosX, this.currentPosY);
+          let d = p.dist(
+            p.mouseX,
+            p.mouseY,
+            this.currentPosX,
+            this.currentPosY
+          );
           let force = 200 / (d + 1);
-          let angle = p.atan2(this.currentPosY - p.mouseY, this.currentPosX - p.mouseX);
+          let angle = p.atan2(
+            this.currentPosY - p.mouseY,
+            this.currentPosX - p.mouseX
+          );
           this.currentPosX += p.cos(angle) * force;
           this.currentPosY += p.sin(angle) * force;
         }
@@ -108,7 +116,11 @@ const IntroSection = () => {
         p.textAlign(p.CENTER, p.CENTER);
         p.textSize(16);
         p.text("MOVE AROUND", p.width * 0.5, p.height * 0.05);
-        p.text("TYPE A CHARACTER / RESET THROUGH ESC", p.width * 0.5, p.height * 0.07);
+        p.text(
+          "TYPE A CHARACTER / RESET THROUGH ESC",
+          p.width * 0.5,
+          p.height * 0.07
+        );
 
         for (let particle of particleArr) {
           particle.update();
@@ -179,7 +191,12 @@ const IntroSection = () => {
     };
   }, []);
 
-  return <div ref={canvasRef} style={{ width: "100%", height: "100%", lineHeight: 1.0 }} />;
+  return (
+    <div
+      ref={canvasRef}
+      style={{ width: "100%", height: "100%", lineHeight: 1.0 }}
+    />
+  );
 };
 
 export default IntroSection;
