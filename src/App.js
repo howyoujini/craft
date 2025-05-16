@@ -1,12 +1,11 @@
-import React from "react";
 import "./App.css";
-import IntroSection from "./components/IntroSection";
+import SpeechJam from "./components/SpeechJam";
 
 const App = () => {
   return (
     <div>
       <section id="intro-section">
-        <IntroSection />
+        <SpeechJam />
       </section>
     </div>
   );
